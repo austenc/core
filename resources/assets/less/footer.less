@@ -1,0 +1,37 @@
+/* Footer (Sticky to bottom)
+-------------------------------------------------- */
+#footer {
+	position: relative;
+	padding-top: 12px;
+}
+
+.back-top-contain{
+
+	position: absolute;
+	top: -34px;
+	left: 50%;
+	margin-left: -1.5em;
+	width: 3em;
+	height: 3em;
+
+	#back-top {
+		width: 100%;
+		border-radius: 50%;
+		height: 100%;
+		padding: 0;
+		padding-left: 0.1em;
+		padding-top: 0.75em;
+		border: none;
+
+		-webkit-transition: all 250ms;
+		-moz-transition: all 250ms;
+		transition: all 250ms;
+		.shadow-level(2);
+
+		&:hover {
+			color: @white;
+			background-color: @brand-main;
+		    .shadow-level(1);
+		}
+	}
+}

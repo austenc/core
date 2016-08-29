@@ -1,0 +1,46 @@
+.btn-text-success {
+	color: @brand-success !important;
+}
+
+.btn-clear {
+	background-color: transparent;
+
+	&:hover, &:focus, &:active {
+		color: @white;
+	}
+}
+
+.btn-icon-giant{
+	font-size: 3em;
+	.center-block;
+	.text-center;
+	.well;
+	-webkit-transition: all 250ms;
+	-moz-transition: all 250ms;
+	transition: all 250ms;
+	.shadow-level(1);
+
+	&:hover {
+	    .shadow-level(2);
+	    text-decoration: none;
+	}
+
+	.glyphicon{
+		font-size: 2em;
+		.center-block;
+		.text-center;
+	}
+
+}
+
+// allow multiple btn-group input groupings on left side
+.input-group {
+	.btn-group:nth-child(n+2) {
+		&:not(:last-child) {
+			.btn {
+				border-radius: 0;
+				border-right: 0;
+			}
+		}
+	}
+}

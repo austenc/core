@@ -1,0 +1,158 @@
+
+// TEMPORARY OVERRIDE OF TRANSITION SINCE CHROME HAS A BUG THAT AFFECTS PRINTING
+.content-wrapper {
+	transition: none;
+}
+
+/* Helper Classes
+-------------------------------------------------- */
+.datepicker {
+    z-index: 1080 !important;
+}
+
+
+@media (min-width: @screen-sm-min) {
+	dl.dl-padded {
+		dt {
+			margin-bottom: 0.75em;
+		}
+	}
+	
+}
+
+/* Admin Homepage
+-------------------------------------------------- */
+.home-hotbuttons {
+	.btn{
+		text-align: left;
+		padding-left: 1.5em;
+	}
+}
+
+// Warning for if on staging server
+.staging-warning{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 5000;
+	border-radius: 0;
+	padding: 3em;
+	margin-bottom: 0;
+
+	.btn {
+		margin-left: 2em;
+	}
+}
+
+
+/* Events Calendar
+-------------------------------------------------- */
+.fc-event{
+	&:focus, &:active {
+		color: @white;
+	}
+}
+
+/* Theme Variables
+-------------------------------------------------- */
+#main-ajax-load {
+	.text-center;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("/vendor/hdmaster/core/img/gear.svg") 50% 45% no-repeat rgb(249,249,249);
+	opacity: .8;
+	vertical-align: middle;
+
+	span {
+		.center-block;
+		padding-top: 1.25em;
+	}
+}
+
+/* Theme Variables
+-------------------------------------------------- */
+@body-bg: @brand-lighter;
+
+/* Maintenance Mode
+-------------------------------------------------- */
+.maintenance-mode{
+	.text-center;
+
+	img {
+		.center-block;
+		.img-responsive;
+	}
+
+	h1 {
+		margin-top: 2em;
+	}
+
+	.back-top-contain {
+		display: none;
+	}
+}
+
+/* Modal Override
+-------------------------------------------------- */
+.modal-dialog {
+	margin: 50px auto;
+}
+
+/* Google maps
+-------------------------------------------------- */
+.fluid-map {
+	.shadow-level(1);
+	width: 100%;
+	height: 480px;
+}
+
+.directions-panel {
+	.adp-directions {
+		width: 100%;
+	}
+	.adp-placemark {
+		border: 0;
+		.shadow-level(1);
+
+		td {
+			padding: 0.5em;
+		}
+	}
+}
+
+// Make 'linked' list groups actually look like links
+div.list-group {
+	a.list-group-item {
+		color: @link-color;
+
+		&:hover {
+			color: @link-hover-color;
+		}
+
+		&.active {
+			color: @white;
+		}
+	}
+}
+
+
+//== Some Tabs + Well specific styles
+.nav-tabs {
+	> li:first-child > a {
+		left: -1px;
+	}
+}
+
+.tab-content.well {
+	border-top-left-radius: 0px;
+
+	> .tab-pane > .well {
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
+	}
+}

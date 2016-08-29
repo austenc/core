@@ -1,0 +1,31 @@
+.pagination-contain {
+    .row;
+    .text-center;
+
+    .total-results {
+        .center-block;
+    }
+
+    .links {
+        text-align: center;
+    }
+}
+
+@media(min-width: @screen-sm-min) {
+    .pagination-contain {
+        .text-left;
+
+        .total-results, .links {
+            .make-sm-column(6);
+            margin-top: 0;
+        }
+
+        .links {
+            .text-right;
+        }
+
+        .pagination {
+            margin-top: 0;
+        }
+    }
+}

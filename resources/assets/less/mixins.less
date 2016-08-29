@@ -1,0 +1,110 @@
+/* Material Design inspired shadows
+-------------------------------------------------- */
+.shadow-level(@theLevel: 1){
+    @level: @theLevel;
+
+    & when (@level = -1) {
+        //box-shadow: inset 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);
+    }
+    & when (@level = 1) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 2) {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 3) {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 4) {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    & when (@level = 5) {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+}
+
+/* -------------------------------------------------- */
+
+.panel {
+    .shadow-level(1);
+}
+
+.panel-shadow, .panel-default {
+    .panel-default;
+    // .shadow-level(1);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.panel-success, .panel-info, .panel-warning, .panel-danger {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* Typography
+-------------------------------------------------- */
+.monospace {
+    font-family: @font-family-monospace;
+}
+
+// For some forms -- bolds, underlines, uppercase
+.text-yell {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.nowrap {
+    white-space: nowrap;
+
+    .btn-group {
+        display: flex;
+    }
+}
+
+/* Headings
+-------------------------------------------------- */
+.back-link{
+    margin-top: 1.75em;
+
+    a.btn-link{
+        white-space: normal;
+    }
+}
+
+.valign-heading {
+    margin-top: @line-height-computed;
+}
+
+
+/* Miscellaneous
+-------------------------------------------------- */
+// Space rows vertically (margin-bottom)
+.row.vspaced {
+    margin-bottom: 1em;
+}
+
+// pulls something right only on small and up
+.pull-right-sm{
+    float: none;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .pull-right-sm{
+        .pull-right();
+    }
+
+    .back-link{
+        a.btn-link{
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import 'skills.less';
+
+/* Taking a test page
+-------------------------------------------------- */
+.time-remaining{
+	padding-top: 0.5em;
+}
+
+.testing-stem{
+	margin-top: 0;
+}
+
+.distractors-list{
+	.form-group{
+		margin-bottom: 0.7em;
+	}
+}
+
+.distractor-label{
+	padding-top: 0.5em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.distractor{
+	padding-left: 2.25em;
+	padding-bottom: 0.5em;
+	border-radius: 4px;
+	border: 3px solid @state-info-bg;
+
+	&:hover{
+		cursor:pointer;
+	}
+
+	&.selected{
+		.bg-warning;
+		border: 3px solid @btn-warning-bg;
+	}
+}
+
+/* Actionable Tests Jumbotron
+-------------------------------------------------- */
+.actionable-tests{
+	border-bottom: 1px solid @gray-lighter;
+
+	&.started{
+		background-color: @state-success-bg;
+	}
+
+	&.pending{
+		background-color: @state-warning-bg;
+	}
+}
+
+.well {
+	background-color: @white;
+	.shadow-level(1);
+	border:   none;
+}

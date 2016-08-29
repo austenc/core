@@ -1,0 +1,32 @@
+/* General Form Styles 
+-------------------------------------------------- */
+
+// monospace all the input types
+input[type="text"], textarea{
+	.monospace;
+}
+
+// make data-mask inputs slightly lighter in color
+input[data-mask] {
+	color: lighten(@input-color, 10%);
+}
+
+.input-group-addon{
+	background-color: #F5F5F5;
+}
+
+/* Bootstrap-tagsinput specific
+-------------------------------------------------- */
+.bootstrap-tagsinput{
+	width: 100%;
+	margin-bottom: 0;
+	.form-control;
+}
+.input-group .bootstrap-tagsinput:nth-child(2){
+	.border-right-radius(0);
+}
+
+// So jquery.autosize doesn't make wacky half-height textareas
+textarea {
+	min-height: @input-height-base;
+}

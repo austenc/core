@@ -1,0 +1,81 @@
+/* Flash Messages
+-------------------------------------------------- */
+.flash-messages{
+	.alert{
+		margin-bottom: 0;
+		border-radius: 0;
+
+		p.lead{
+			margin-bottom: 0.75em;
+		}
+
+		.messages{
+			padding-left: 0.75em;
+		}
+
+		ul{
+			padding-left: 0;
+			margin-bottom: 0;
+
+			li{
+				list-style: none;
+				margin-bottom: 0.25em;
+				padding-bottom: 0.25em;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&.alert-info{
+			.flash-item-variant(@state-info-text);
+		}
+		&.alert-warning{
+			.flash-item-variant(@state-warning-text);
+		}
+		&.alert-danger{
+			.flash-item-variant(@state-danger-text);
+		}
+		&.alert-success{
+			.flash-item-variant(@state-success-text);
+		}
+		
+		
+	}
+}
+
+.flash-item-variant(@border) {
+	ul{
+		li{
+			border-bottom: 1px dashed lighten(@border, 45%);
+
+			&:last-child{
+				border: 0;
+			}
+		}
+	}
+}
+
+
+/* Notifications List
+-------------------------------------------------- */
+.notifications-table{
+	.bg-muted{
+		.btn {
+			.btn-default;
+		}
+	}
+}
+
+/* Flash Overlay Messages - 'toast' style and usually sent with JS
+-------------------------------------------------- */
+@flashOverlayPosition: 1em;
+
+.flash-overlay{
+	position: fixed;
+	bottom: @flashOverlayPosition/2;
+	right: @flashOverlayPosition;
+	.shadow-level(2);
+	z-index: 7000;
+}

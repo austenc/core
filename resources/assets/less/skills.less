@@ -1,0 +1,77 @@
+/* Skill testing 
+-------------------------------------------------- */
+
+
+// Skill task steps
+.step-table{
+
+	tr.step{
+		&:hover{
+			> td{
+				background-color: @light-yellow;
+			}
+		}
+	}
+
+	tbody{
+		border-left: 1px solid @gray-lighter;
+		border-right: 1px solid @gray-lighter;
+	}
+
+	// extra input row(s)
+	tr.input{
+		background-color: @gray-lighter;
+		font-size: 0.9em;
+	}
+
+	tr.input{
+		td{
+			padding: 1.5em 4em;
+			padding-bottom: 0;
+			border-bottom: 1px solid darken(@gray-lighter, 15%);
+		}
+	}
+
+	tr.step + tr.input {
+		td{
+			.shadow-level(-1);
+		}
+	}
+}
+
+// skilltest nav
+ul.pagination-skill{
+	list-style-type: none;
+	.center-block;
+	.text-center;
+
+	li{
+		display:inline-block;
+		width:3em;
+		height:3em;
+		background-color: @gray;
+		border-radius: 50%;
+
+		button, a{
+			background-color: transparent;
+			width: 100%;
+			height: 100%;
+			color: @white;
+			border:none;
+			font-size:2em;
+		}
+
+		&.active, &:hover {
+			background-color: @brand-primary;
+		    text-decoration: none;
+		}
+
+		&:hover{
+			background-color: @brand-info;
+		}
+
+		&.has-error{
+			background-color: @brand-danger;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+// Import bootstrap and less files from plugins
+@import "../../../../vendor/bootstrap/less/bootstrap.less";
+@import "../../../../vendor/bootstrap-datepicker/less/datepicker3.less";
+@import "../../../../vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.less";
+@import "../../../../vendor/bootstrap-3-timepicker/less/timepicker.less";
+
+/* Import a custom build version of AdminLTE
+-------------------------------------------------- */
+// We need to inline this because adminLTE overrides the bootstrap @gray 
+// variable which causes all sorts of coloration issues. Inlining this results 
+// in a smaller filesize compared to compiling it with less anyway. Importing 
+// it first allows us to override styles as needed
+@import (inline) "../../../../vendor/AdminLTE/dist/css/AdminLTE.min.css";
+
+/* Variables
+-------------------------------------------------- */
+@import "variables.less";
+
+/* Alerts
+-------------------------------------------------- */
+@import "alerts.less";
+
+/* Sortable rows behavior definition
+-------------------------------------------------- */
+@import "sortable.less";
+
+/* Mixins
+-------------------------------------------------- */
+@import "mixins.less";
+
+/* Notifications / Flash Messages
+-------------------------------------------------- */
+@import "notifications.less";
+
+/* Form Overrides
+-------------------------------------------------- */
+@import "forms.less";
+
+/* Table Overrides
+-------------------------------------------------- */
+@import "tables.less";
+
+/* Testing UI / Related
+-------------------------------------------------- */
+@import "testing.less";
+
+/* Buttons
+-------------------------------------------------- */
+@import 'buttons.less';
+
+/* State Shapes Font Face
+-------------------------------------------------- */
+@import "stateface.less";
+
+/* Header
+-------------------------------------------------- */
+@import 'header.less';
+
+/* Footer
+-------------------------------------------------- */
+@import 'footer.less';
+
+/* Sidebar
+-------------------------------------------------- */
+@import 'sidebar.less';
+
+/* Pagination
+-------------------------------------------------- */
+@import 'pagination.less';
+
+/* General Application Styles
+-------------------------------------------------- */
+@import "app.less";
+
+/* Styles related to Charting and Reporting
+-------------------------------------------------- */
+@import "charts.less";
+@import "reports.less";
+
+/* scantron display / scoring styles
+-------------------------------------------------- */
+@import "scantron.less";
+
+/* ladda bootstrap styles for loading indicators inside buttons
+-------------------------------------------------- */
+// We import this last as it causes some styling conflicts when imported first
+@import (inline) "../../../../vendor/ladda-bootstrap/dist/ladda-themeless.min.css";

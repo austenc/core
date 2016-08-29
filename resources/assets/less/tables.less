@@ -1,0 +1,104 @@
+/* Table Overrides
+-------------------------------------------------- */
+
+// default to white accented rows
+@table-bg-accent: @white;
+
+// Rows with background colors
+tr.bg-success > td {
+	background-color: @state-success-bg;
+}
+tr.bg-info > td {
+	background-color: @state-info-bg;
+}
+tr.bg-warning > td {
+	background-color: @state-warning-bg;
+}
+tr.bg-danger > td {
+	background-color: @state-danger-bg;
+}
+
+
+// unless we'are inside a well!
+.well {
+	.table-striped {
+		> tbody > tr:nth-of-type(odd) > td {
+			background-color: @brand-lighter;
+		}
+	}
+
+	.table-row-variant(active; @table-bg-active);
+	.table-row-variant(success; @state-success-bg);
+	.table-row-variant(info; @state-info-bg);
+	.table-row-variant(warning; @state-warning-bg);
+	.table-row-variant(danger; @state-danger-bg);
+
+	.table-striped {
+		> tbody > tr {
+			&.bg-success > td {
+				background-color: @state-success-bg;
+			}
+			&.bg-info > td {
+				background-color: @state-info-bg;
+			}
+			&.bg-warning > td {
+				background-color: @state-warning-bg;
+			}
+			&.bg-danger > td {
+				background-color: @state-danger-bg;
+			}
+		}
+	}
+}
+
+tr.bg-muted > td, tr.muted > td, .well tr.muted > td {
+	color: @text-muted;
+}
+
+.table .progress {
+	margin-bottom: 0px;
+}
+
+// Sortable column arrows
+th > a > .glyphicon-chevron-down, th > a > .glyphicon-chevron-up {
+	color: #333;
+}
+
+.table-inner {
+	width: 100%;
+}
+
+.table-equal-3 {
+	td {
+		width: 33%;
+	}
+}
+
+.subtotal-row {
+	td {
+		padding-top: 0.5em;
+		border-top: 2px solid darken(@gray-lighter, 10%);
+	}
+}
+
+tr.strong {
+	td {
+		font-weight: bold;
+	}
+}
+
+// Nested table in header
+.table-inner-header {
+	.table-inner;
+	.text-muted;
+	font-weight: normal;
+}
+
+.table-readonly {
+	.table-condensed;
+	.monospace;
+
+	label {
+		font-family: @font-family-sans-serif;
+	}
+}

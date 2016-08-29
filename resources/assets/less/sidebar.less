@@ -1,0 +1,138 @@
+/* Affixed sidebar / other sidebar stuff
+-------------------------------------------------- */
+@dropdown-header-color: lighten(#2C3B41, 6%);
+
+// The lefthand sidebar
+.main-sidebar {
+
+	ul.sidebar-menu > li > a:focus {
+		text-decoration: none;
+	}
+
+	// Dropdown section headers
+	.dropdown-header {
+		font-size: @font-size-base;
+		font-variant: small-caps;
+		color: lighten(@dropdown-header-color, 12%);
+		padding-left: 0.25em;
+		padding-top: 0.5em;
+		border-bottom: 1px solid @dropdown-header-color;
+	}
+
+	.sidebar-menu {
+
+	    li > a > .glyphicon-menu-left {
+	      width: auto;
+	      height: auto;
+	      padding: 0;
+	      margin-right: 10px;
+	      margin-top: -4px;
+	      font-size: 0.75em;
+	    }
+	    li.active {
+	      > a > .glyphicon-menu-left {
+	        .rotate(-90deg);
+	      }
+	      > .treeview-menu {
+	        display: block;
+	      }
+	    }
+	}
+}
+
+// the content sidebar (buttons on the right)
+.content .main .sidebar {
+
+	a:not(.btn) {
+		color: @link-color;
+
+		&:hover {
+			color: @gray;
+		}
+	}
+
+	.btn {
+		.btn-block;
+		color: @white;
+		text-align: left;
+		margin-bottom: 0.5em;
+	}
+
+	.btn-default {
+		color: @btn-default-color;
+	}
+
+	.affix-top {
+		position: static;
+		width: auto;
+		max-width: 100%;
+		top: 0;
+	}
+}
+
+.affix {
+	position: static;
+}
+
+@media (min-width: @screen-md-min) {
+	.affix {
+		position: fixed;
+		top: 15px;
+		width: inherit;
+		max-width: 255px;
+	}
+}
+
+.nav {
+	.list-group-item {
+		padding:0;
+
+		&.active > a {
+			&, &:hover, &:focus {
+				color: @list-group-active-color;
+				background-color: @list-group-active-bg;
+			}
+		}
+	}
+}
+
+
+/* Media Queries
+-------------------------------------------------- */
+// Small screens, 768+
+@media(min-width: @screen-sm-min) {
+	.content .sidebar {
+		.affix {
+			width: auto;
+			max-width: 100%;
+		}
+
+		.btn {
+			display: inline-block;
+			width: auto;
+			text-align: left;
+			margin-bottom: 0;
+		}
+
+	}
+}
+
+// Medium screens
+@media(min-width: @screen-md-min) {
+
+	.content .sidebar {
+
+		.btn {
+			.btn-block;
+			text-align: left;
+			margin-bottom: 0.5em;
+		}
+
+		.affix {
+			position: fixed;
+			top: 15px;
+			width: inherit;
+		}
+
+	}
+}

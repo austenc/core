@@ -1,0 +1,33 @@
+{
+    "name": "hdmaster/core",
+    "version": "0.1.0",
+    "description": "The core services of testmaster",
+    "authors": [
+        {
+            "name": "hdmaster",
+            "email": "hdmaster@hdmaster.com"
+        }
+    ],
+    "license": "proprietary",
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.*",
+        "laravelcollective/html": "5.1.*",
+        "patricktalmadge/bootstrapper": "5.9.*",
+        "zizaco/confide": "5.0.x-dev as 5.0",
+        "zizaco/entrust": "dev-master as 1.8.0",
+        "pragmarx/zipcode": "1.5.*",
+        "codesleeve/laravel-stapler": "1.0.*",
+        "tecnickcom/tcpdf": "6.2.*",
+        "setasign/fpdi-tcpdf": "1.5.*",   
+        "venturecraft/revisionable": "^1.28.0",
+        "rap2hpoutre/laravel-log-viewer": "^0.7.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Hdmaster\\Core\\": "src/"
+        }
+    }
+}

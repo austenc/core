@@ -1,0 +1,318 @@
+// Variables
+@scantron-color: #FA7161;
+@scantron-alt:   lighten(@scantron-color, 28%);
+
+// Mixins
+.box-row {
+	font-family: monospace;
+	display: table;
+	width: 100%;
+	padding-left: 0;
+	margin-bottom: 0;
+
+	&.striped li, &.striped td {
+		border:0;
+	}
+	&.striped li:nth-of-type(odd), &.striped td:nth-of-type(odd) {
+		background-color: @scantron-alt;
+	}
+	&.striped li:first-child, &.striped td:first-child {
+		border-bottom-left-radius: 4px;
+	}
+	&.striped li:last-child, &.striped td:last-child {
+		border-bottom-right-radius: 4px;
+	}
+
+	&.separated {
+		li:nth-child(3), li:nth-child(6), td:nth-child(3), td:nth-child(6) {
+			border-right: 1px solid @scantron-color;
+		}
+	}
+
+	&:first-child {
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+	}
+
+	li, td {
+		display: table-cell;
+		.text-center;
+		border-right: 1px solid @scantron-color;
+		margin: 0;
+		padding: 2px;
+
+		&.icon {
+			padding: 0;
+		}
+
+		&:last-child {
+			border-right: 0;	
+		}
+
+		span.circle {
+			.center-block;
+			color: @scantron-color;
+			border-radius: 50%;
+			margin-bottom: 0.25em;
+			font-size: 0.875em;
+			max-width: 1.4em;
+			border: 1px solid @scantron-color;
+
+			&.glyphicon-comment {
+				border: none;
+				font-size: 14px;
+				top: 3px;
+				color: @brand-primary;
+			}
+		}
+	}
+
+} // .box-row
+
+
+.key-step {
+
+	&:after{
+		position: absolute;
+		top: -1px;
+		left: -0.25em;
+		content: "*";
+		color: red;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+}
+
+/**
+ * Web version styles
+ */
+.scantron-form {
+	.row {
+		margin-bottom: 0.75em;
+	}
+
+	.box {
+		border: 1px solid @scantron-color;
+		border-radius: 4px;
+		.text-center;
+		
+		.title {
+			background-color: @scantron-color;
+			.text-center;
+			color: @white;
+			text-transform: uppercase;
+		}
+
+		.subtitle {
+			margin-bottom: 0;
+			background-color: @scantron-color;
+			.text-center;
+			text-transform: uppercase;
+			color: @white;
+			.clearfix;
+
+			div {
+				border-top: 1px solid @white;
+				border-right: 1px solid @white;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+
+	}
+
+	.show-answers li.answer {
+		.circle {
+			color: red !important;
+			background-color: red;
+
+			&.filled {
+				color: @black !important;
+				background-color: @black;
+			}
+		}
+	}
+
+	.circle.filled {
+		color: @black !important;
+		background-color: @black;
+	}
+
+	.right-col {
+		.row {
+			margin-bottom: 1em;
+		}
+	}
+
+	.answer-col {
+		.make-xs-column(2);
+
+		// striped rows
+		.box > span:nth-of-type(odd) ul {
+			background-color: @scantron-alt;
+		}
+
+		// mark skill step rows to differentiate from non-used rows
+		.box > span[class^='step-'], span[class*='step-'] {
+			ul {
+				background: lighten(@state-info-bg, 5%);
+			}
+			
+			&:nth-of-type(odd) ul {
+				background-color: darken(@state-info-bg, 5%);
+			}
+		}
+
+	}
+
+	.answers-contain {
+		:first-child {
+			.answer-col:first-child {
+				counter-reset: answers;
+			}
+		}
+
+		:last-child {
+			.answer-col:first-child {
+				counter-reset: answers 120;
+			}
+		}
+	}
+
+	// apply the above style to both .pencil-row and .bubble-row
+	.pencil-row, .bubble-row {
+		.box-row;
+	}
+
+	.answer-list {
+		list-style: none;
+		position: relative;
+
+		li:first-child > .circle {
+
+			counter-increment: answers;
+
+			&:before {
+				position: absolute;
+				width: 1.25em;
+				left: -2em;
+				content: counter(answers);
+				.text-right;
+				color: @scantron-color;
+			}
+		}
+
+		li {
+			cursor: pointer;
+			border-right: none;
+		}
+	}
+}
+
+
+// Print adjust page
+.scanform-adjust {
+	.btn-up	{
+		margin-top: -1.25em;
+		margin-bottom: 0.25em;
+	}
+}
+
+
+/********************************************************************
+ * PDF-printable (html) version of scantron form! This is incomplete!
+ */
+
+// Variables
+@bubbleWidth: 3mm;
+
+.scantron-form.pdf {
+
+	table.box {
+		width: 100%;
+
+		:first-child {
+			&.pencil-row td {
+				width: 4mm
+			}
+		}
+		border-width: 1px;
+	}
+
+	// margin: 32mm 7mm 14mm 17.5mm;
+	margin: 0;
+	font-size: 9pt;
+
+	.row {
+		margin-left: 0;
+	}
+
+	.column {
+		padding: 0;
+		padding-right: 4mm;
+	}
+
+	.lastname {
+		.column;
+		width: 64mm;
+	}
+
+	.firstname {
+		.column;
+		width: 42mm;
+	}
+
+	.middlename {
+		.column;
+		width: 8mm;
+		.clearfix;
+	}
+
+	.right-col {
+		.column;
+		width: 64mm;
+		padding-right: 0;
+
+		.row > div {
+			.column;
+		}
+	}
+	
+	.title {
+		height: 4mm;
+		line-height: 4mm;
+	}
+
+	.bubble-row, .pencil-row {
+		li, td {
+			padding: 1mm 0;
+			padding-bottom: 0.5mm;
+			.text-center;
+
+			span.circle {
+				margin: 0;
+				.center-block;
+				.text-center;
+
+				border-radius: 1mm;
+				max-width: @bubbleWidth;
+				width: @bubbleWidth;
+				height: @bubbleWidth;
+				line-height: @bubbleWidth;
+				border: 1px solid @scantron-color;
+			}
+		}
+	}
+
+	.pencil-row {
+		max-height: 4mm;
+		height: 4mm;
+
+		li {
+			padding: 0;
+		}
+	}
+
+}
