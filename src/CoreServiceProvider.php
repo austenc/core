@@ -155,6 +155,16 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->bindShared('flash', function () {
             return $this->app->make('Hdmaster\Core\Notifications\FlashNotifier');
         });
+
+        // Register package dependencies
+        $this->app->register('Collective\Html\HtmlServiceProvider');
+        $this->app->register('Bootstrapper\BootstrapperL5ServiceProvider');
+        $this->app->register('Codesleeve\LaravelStapler\Providers\L5ServiceProvider');
+        $this->app->register('PragmaRX\ZipCode\Vendor\Laravel\ServiceProvider');
+        $this->app->register('Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider');
+
+        $this->app->register('Zizaco\Confide\ServiceProvider');
+        $this->app->register('Zizaco\Entrust\EntrustServiceProvider');
     }
 
     /** 
