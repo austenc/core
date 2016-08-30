@@ -52,6 +52,11 @@ class CoreDbCommand extends Command
         $this->info('Publishing core migrations...');
         $this->call('vendor:publish', $publishOptions);
 
+        // Dump autoload in case these haven't been published before
+        $this->call('clear-compiled');
+        system('composer dump-autoload -o');
+        $this->call('optimize');
+
         // Reset the database first? 
         if ($options['reset']) {
             $this->call('migrate:reset');
