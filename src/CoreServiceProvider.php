@@ -314,7 +314,7 @@ class CoreServiceProvider extends ServiceProvider
             
             // Dependencies
             'Entrust'                 => \Zizaco\Entrust\EntrustFacade::class,
-            // 'Confide'                 => \Zizaco\Confide\Facade::class,
+            'Confide'                 => \Zizaco\Confide\Facade::class,
             
             'Accordion'               => \Bootstrapper\Facades\Accordion::class,
             'Alert'                   => \Bootstrapper\Facades\Alert::class,
