@@ -2,10 +2,10 @@
 
 use Illuminate\Console\Command;
 
-class CoreDevCommand extends Command
+class CoreSetupCommand extends Command
 {
-    protected $signature = 'tmu:dev';
-    protected $description = 'Setup TMU for development';
+    protected $signature = 'tmu:setup';
+    protected $description = 'Setup TMU Core assets and migrations.';
 
     /**
      * Execute the command.

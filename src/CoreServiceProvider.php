@@ -136,7 +136,7 @@ class CoreServiceProvider extends ServiceProvider
         // Register package commands
         $this->commands([
             'CoreDbCommand',
-            'CoreDevCommand',
+            'CoreSetupCommand',
             'CoreSeedCommand',
             'EventEndCommand',
             'ArchiveMaxAttempts',
@@ -301,7 +301,7 @@ class CoreServiceProvider extends ServiceProvider
             // Commands
             'ArchiveMaxAttempts'      => 'Hdmaster\Core\Commands\ArchiveMaxAttempts',
             'CoreDbCommand'           => 'Hdmaster\Core\Commands\CoreDbCommand',
-            'CoreDevCommand'          => 'Hdmaster\Core\Commands\CoreDevCommand',
+            'CoreSetupCommand'        => 'Hdmaster\Core\Commands\CoreSetupCommand',
             'CoreSeedCommand'         => 'Hdmaster\Core\Commands\CoreSeedCommand',
             'CronCommand'             => 'Hdmaster\Core\Commands\CronCommand',
             'EventEndCommand'         => 'Hdmaster\Core\Commands\EventEndCommand',
